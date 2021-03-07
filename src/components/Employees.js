@@ -4,7 +4,7 @@ export default function Employees(props){
 
     const { employees=[] } = props;
 	const listItems = employees.map((e) =>
-	  <li >{e} </li>
+	  <li key={e} >{e} </li>
 	);
 
 	return(
