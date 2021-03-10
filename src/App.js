@@ -8,11 +8,9 @@ function App() {
 
   return (
     <div className="App">
-  <Container>
-
-    <Calculator></Calculator>
-    
-</Container>
+      <Container>
+        <Calculator></Calculator>
+      </Container>
     </div>
   );
 }

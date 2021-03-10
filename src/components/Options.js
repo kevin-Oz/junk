@@ -4,10 +4,10 @@ import {Button, ProgressBar, Row, Col} from 'react-bootstrap'
 
 export default function Options(props) {
  //control of state to the progressBar
+ const { price } = props;
 
 const [responsive, setResponsive] = useState(0);
 //control of state to result
-const [result, setResult] = useState(0);
 
 //state of price responsive
 const [responsiveDesing,setResponsiveDesing] =useState(0);
@@ -24,36 +24,29 @@ const nResponsive = () =>{
 }
 
 
-const sumatoria =()=>{
-  setResult(result+responsiveDesing);
-}
-
-
 useEffect( ()=>{
-  console.log(responsiveDesing);
+  price(responsiveDesing);
 },[responsive]);
 
 
   return (
     <div>
-      <Row>
-        <Col className="col-2">
+      <Row className="m-1">
+        <Col className="col-12 col-sm-12 col-md-4">
           <span>Responsive Design</span>
         </Col>
-        <Col className="col-1">
-          <Button onClick={nResponsive} variant="outline-primary">- </Button>{" "}
+        <Col className="col-2 col-sm-2 col-md-1">
+          <Button size="sm" onClick={nResponsive} variant="outline-primary">-</Button>{" "}
         </Col>
-        <Col className="col-8 p-0 m-0">
+        <Col className="col-8 col-sm-8 col-md-6 p-0 mt-2 mx-0">
           <ProgressBar variant="info" label="yes" now={responsive} />
         </Col>
-        <Col className="col-1">
-          <Button onClick={yResponsive} variant="outline-primary">
+        <Col className="col-2 col-sm-2 col-md-1">
+          <Button size="sm" onClick={yResponsive} variant="outline-primary">
             +{" "}
           </Button>{" "}
         </Col>
       </Row>
-
-
     </div>
   );
 }
